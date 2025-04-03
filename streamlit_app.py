@@ -1,11 +1,10 @@
-
-import streamlit as st
-st.write('ola mundo!')
-
-
-import streamlit as st
-import pandas as pd
-import numpy as np
+try:
+    import streamlit as st
+    import pandas as pd
+    import numpy as np
+except ModuleNotFoundError as e:
+    print("Erro: O módulo necessário não está instalado. Tente instalar com `pip install streamlit pandas numpy`.")
+    raise e
 
 # Configuração da página
 st.set_page_config(page_title="Meu App Streamlit", layout="wide")
@@ -37,4 +36,5 @@ st.line_chart(dados)
 
 # Rodando no Streamlit
 # Para rodar este script, salve como app.py e execute no terminal:
+# pip install streamlit pandas numpy
 # streamlit run app.py
