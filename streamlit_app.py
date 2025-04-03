@@ -7,17 +7,7 @@ except ModuleNotFoundError as e:
     raise e
 
 
-if pagina == "Home":
-    st.title("Página Inicial")
-    st.write("Bem-vindo à página inicial!")
 
-elif pagina == "Sobre":
-    st.title("Sobre")
-    st.write("Esta é a página Sobre.")
-
-elif pagina == "Contato":
-    st.title("Contato")
-    st.write("Entre em contato conosco.")
 
 # Configuração da página
 st.set_page_config(page_title="Meu App Streamlit", layout="wide")
