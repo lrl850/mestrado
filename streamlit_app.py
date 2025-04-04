@@ -6,7 +6,7 @@ st.title("Upload de Arquivo Excel")
 
 
 # Configuração da página
-st.set_page_config(page_title="Meu Site Streamlit", page_icon="🌎", layout="wide")
+#st.set_page_config(page_title="Meu Site Streamlit", page_icon="🌎", layout="wide")
 
 # Barra lateral
 st.sidebar.title("Navegação")
