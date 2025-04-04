@@ -1,7 +1,6 @@
 import streamlit as st
 from streamlit_option_menu import option_menu
 import pandas as pd
-pip install openpyxl
 
 
 ### importamdo dados excel
