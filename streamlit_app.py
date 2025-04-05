@@ -3,7 +3,7 @@ from streamlit_option_menu import option_menu
 import pandas as pd
 
 
-### importamdo dados excel
+### importando dados excel
 importa_dados = st.file_uploader("Carregar arquivo Excel", type=["xlsx"])
 if importa_dados is not None:
     df = pd.read_excel(importa_dados, sheet_name=None)
