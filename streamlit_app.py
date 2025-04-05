@@ -1,7 +1,8 @@
 import streamlit as st
 from streamlit_option_menu import option_menu
 import pandas as pd
-import plotly.express as px  # Adicione esta importação
+import plotly.express as px  
+
 
 
 ### importando dados excel
