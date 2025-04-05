@@ -26,6 +26,7 @@ elif pagina == "Contato":
 elif pagina == "pagina do projeto":
     st.title("Página do Projeto")
     st.write("Detalhes do projeto.")
+    
 
 # fim configuração da página
 # teste o2 committtt
