@@ -1,10 +1,12 @@
 
 
-arquivo_excel = st.file_uploader("Escolha um arquivo Excel", type=["xlsx", "xls"])
+arquivo_excel = "general.xlsx"
 
-st.title("Carregar Arquivo Excel")
+# Lê o arquivo
+df = pd.read_excel(arquivo_excel)
 
-arquivo_excel = st.file_uploader("Escolha um arquivo Excel", type=["xlsx", "xls"])
+# Mostra os dados
+st.dataframe(df)
 
 if arquivo_excel is not None:
     df = pd.read_excel(arquivo_excel)
