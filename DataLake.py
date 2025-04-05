@@ -1,8 +1,6 @@
 
 
-arquivo_excel = st.file_uploader("Escolha um arquivo Excel", type=["xlsx", "xls"])
-
-st.title("Carregar Arquivo Excel")
+arquivo_excel = "general.xlsx"
 
 arquivo_excel = st.file_uploader("Escolha um arquivo Excel", type=["xlsx", "xls"])
 
