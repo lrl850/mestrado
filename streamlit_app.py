@@ -34,7 +34,6 @@ elif pagina == "Contato":
 elif pagina == "Projeto":
     st.title("Página do Projeto")
     st.write("Detalhes do projeto.")
-<<<<<<< HEAD
     if st.button("Ir para DataLake"):
         st.session_state.pagina = "DataLake"
         st.experimental_rerun()
@@ -43,14 +42,6 @@ elif pagina == "Projeto":
 elif pagina == "DataLake":
     st.title("Página DataLake")
     st.write("Bem-vindo à página DataLake!")
-=======
-    ### colocando o arquivo excel na página 
-    def mostrar_pagina():
-        st.title("Página DataLake")
-        st.write("Bem-vindo à página DataLake!")
-    # Adicione aqui o conteúdo específico da página DataLake
-    
->>>>>>> 869feeab9f7c75d60f112684ab7f7fe0b99aa5ad
 
     arquivo = st.file_uploader("Envie um arquivo Excel", type=["xlsx"])
     if arquivo:
