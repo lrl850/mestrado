@@ -36,19 +36,12 @@ elif pagina == "Projeto":
     st.write("Detalhes do projeto.")
     if st.button("Ir para DataLake"):
         st.session_state.pagina = "DataLake"
-        st.experimental_rerun()
+        
 
 # Página: DataLake
 elif pagina == "DataLake":
     st.title("Página DataLake")
     st.write("Bem-vindo à página DataLake!")
 
-    arquivo = st.file_uploader("Envie um arquivo Excel", type=["xlsx"])
-    if arquivo:
-        try:
-            df = pd.read_excel(arquivo)
-            st.success("Arquivo carregado com sucesso!")
-            st.dataframe(df)
-        except Exception as e:
-            st.error(f"Erro ao ler o arquivo: {e}")
+    
 # teste commit

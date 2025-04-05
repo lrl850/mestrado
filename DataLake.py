@@ -1,4 +1,5 @@
-
+import streamlit as st
+import pandas as pd
 
 arquivo_excel = "geral info.xlsx
 
