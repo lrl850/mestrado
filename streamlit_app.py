@@ -28,8 +28,8 @@ elif pagina == "pagina do projeto":
     st.write("Detalhes do projeto.")
     ### colocando o arquivo excel na página 
     def mostrar_pagina():
-    st.title("Página DataLake")
-    st.write("Bem-vindo à página DataLake!")
+        st.title("Página DataLake")
+        st.write("Bem-vindo à página DataLake!")
     # Adicione aqui o conteúdo específico da página DataLake
     
 
