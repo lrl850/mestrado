@@ -28,4 +28,4 @@ elif pagina == "pagina do projeto":
     st.write("Detalhes do projeto.")
 
 # fim configuração da página
-# teste o2 committt
+# teste o2 committtt
