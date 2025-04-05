@@ -26,7 +26,12 @@ elif pagina == "Contato":
 elif pagina == "pagina do projeto":
     st.title("Página do Projeto")
     st.write("Detalhes do projeto.")
+    ### colocando o arquivo excel na página 
+    def mostrar_pagina():
+    st.title("Página DataLake")
+    st.write("Bem-vindo à página DataLake!")
+    # Adicione aqui o conteúdo específico da página DataLake
     
 
 # fim configuração da página
-# teste o2 committtt
+# teste o2 comimt Sabado 23/09/2023
