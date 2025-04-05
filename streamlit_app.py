@@ -27,7 +27,7 @@ with st.sidebar:
                          menu_icon="cast", default_index=0)
 
 if pagina == "Home":
-    st.title("Página Inicial")
+    st.title("Página Inicial..")
     st.write("Bem-vindo!")
 
 elif pagina == "Sobre":
