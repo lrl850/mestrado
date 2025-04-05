@@ -1,6 +1,7 @@
 import streamlit as st
 from streamlit_option_menu import option_menu
 import pandas as pd
+import plotly.express as px  # Adicione esta importação
 
 
 ### importando dados excel
@@ -19,6 +20,16 @@ if importa_dados is not None:
     # Exibir os dados da planilha selecionada
     st.write(f"Dados da planilha '{sheet_name}':")
     st.dataframe(dados)
+
+    # Gerar um gráfico
+    st.write("Gráfico dos dados:")
+    colunas = dados.columns
+    x_col = st.selectbox("Selecione a coluna para o eixo X", colunas)
+    y_col = st.selectbox("Selecione a coluna para o eixo Y", colunas)
+    
+    if x_col and y_col:
+        fig = px.line(dados, x=x_col, y=y_col, title=f"Gráfico de {x_col} vs {y_col}")
+        st.plotly_chart(fig)
 
 ### Configuração da página
 with st.sidebar:
