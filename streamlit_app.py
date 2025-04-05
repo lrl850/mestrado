@@ -36,7 +36,7 @@ elif pagina == "Projeto":
     st.write("Detalhes do projeto.")
     if st.button("Ir para DataLake"):
         st.session_state.pagina = "DataLake"
-        st.experimental_rerun()
+        
 
 # Página: DataLake
 elif pagina == "DataLake":
