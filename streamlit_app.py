@@ -4,7 +4,7 @@ import pandas as pd
 
 
 ### importando dados excel
-importa_dados = st.file_uploader("Carregar arquivo Excel", type=["xlsx"])
+importa_dados = st.file_uploader("geral info.xlsx", type=["xlsx"])
 if importa_dados is not None:
     df = pd.read_excel(importa_dados, sheet_name=None)
     # Exibir os nomes das planilhas
@@ -43,3 +43,4 @@ elif pagina == "pagina do projeto":
 
 # fim configuração da página
 # teste Git
+# teste  1:05
