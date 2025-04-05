@@ -1,6 +1,6 @@
 
 
-arquivo_excel = "general.xlsx"
+arquivo_excel = "geral info.xlsx
 
 # Lê o arquivo
 df = pd.read_excel(arquivo_excel)
