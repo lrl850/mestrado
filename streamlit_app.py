@@ -42,6 +42,8 @@ elif pagina == "Projeto":
 elif pagina == "DataLake":
     st.title("Página DataLake")
     st.write("Bem-vindo à página DataLake!")
+    df = pd.read_excel("geral info.xlsx")
+    st.dataframe(df)
 
     
 # teste commit
