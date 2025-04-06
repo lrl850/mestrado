@@ -44,6 +44,15 @@ elif pagina == "TEcnico em eletroeletronica":
     st.write("Bem-vindo à página DataLake!")
     df = pd.read_excel("geral info.xlsx")
     st.dataframe(df)
-
+# criando  grafico interativo
+    # Selecionar colunas para o gráfico
+    colunas = df.columns
+    x_col = st.selectbox("Selecione a coluna para o eixo X", colunas)
+    y_col = st.selectbox("Selecione a coluna para o eixo Y", colunas)
+    
+    # Gerar o gráfico interativo
+    if x_col and y_col:
+        fig = px.line(df, x=x_col, y=y_col, title=f"Gráfico de {x_col} vs {y_col}")
+        st.plotly_chart(fig)
     
 # teste commit
