@@ -39,7 +39,7 @@ elif pagina == "Projeto":
         
 
 # Página: DataLake
-elif pagina == "DataLake":
+elif pagina == "TEcnico em eletroeletronica":
     st.title("Página DataLake")
     st.write("Bem-vindo à página DataLake!")
     df = pd.read_excel("geral info.xlsx")
