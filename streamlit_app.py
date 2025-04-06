@@ -1,6 +1,7 @@
 import streamlit as st
 from streamlit_option_menu import option_menu
 import pandas as pd
+import plotly.express as px 
 
 # Configuração da página
 st.set_page_config(page_title="Navegação com Menu", layout="wide")
@@ -9,7 +10,7 @@ st.set_page_config(page_title="Navegação com Menu", layout="wide")
 with st.sidebar:
     pagina = option_menu(
         "Menu",
-        ["Home", "Sobre", "Contato", "Projeto", "TEcnico em eletroeletronica"],
+        ["Home", "Sobre", "Contato", "Projeto", "Curso Integrado em Eletroeletrônica"],
         icons=["house", "info", "envelope", "file-earmark-code", "database"],
         menu_icon="cast",
         default_index=0
