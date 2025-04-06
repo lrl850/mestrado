@@ -9,7 +9,7 @@ st.set_page_config(page_title="Navegação com Menu", layout="wide")
 with st.sidebar:
     pagina = option_menu(
         "Menu",
-        ["Home", "Sobre", "Contato", "Projeto", "DataLake"],
+        ["Home", "Sobre", "Contato", "Projeto", "TEcnico em eletroeletronica"],
         icons=["house", "info", "envelope", "file-earmark-code", "database"],
         menu_icon="cast",
         default_index=0
