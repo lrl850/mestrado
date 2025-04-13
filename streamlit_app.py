@@ -50,28 +50,46 @@ elif pagina == "Curso Integrado em Eletroeletrônica":
     st.dataframe(df)
 # criando  grafico interativo
     # Selecionar colunas para o gráfico
-    colunas = df.columns
-    x_col = st.selectbox("Selecione a coluna para o eixo X", colunas)
-    y_col = st.selectbox("Selecione a coluna para o eixo Y", colunas)
+   # colunas = df.columns
+   # x_col = st.selectbox("Selecione a coluna para o eixo X", colunas)
+   # y_col = st.selectbox("Selecione a coluna para o eixo Y", colunas)
     
     # Gerar o gráfico interativo
-    if x_col and y_col:
-         fig = px.line(df, x=x_col, y=y_col, title=f"Gráfico de {x_col} vs {y_col}")
-         st.plotly_chart(fig)
+    #if x_col and y_col:
+   #      fig = px.line(df, x=x_col, y=y_col, title=f"Gráfico de {x_col} vs {y_col}")
+  #       st.plotly_chart(fig)
 # criando  grafico  do curso integrado em eletroeletrônica Resumido
 
     # Gerar gráfico de linhas interativo com Plotly Express (px)
-    fig = px.line(DataFrame_eltro_resumido, x='Ano', y='Número de Alunos', color='Categoria',
-              markers=True, title='Tendência: Total Matriculados, Retenção e Evasão (por Ano)')
+   # fig = px.line(DataFrame_eltro_resumido, x='Ano', y='Número de Alunos', color='Categoria',
+    #          markers=True, title='Tendência: Total Matriculados, Retenção e Evasão (por Ano)')
 
-    fig.update_layout(xaxis_title='Ano', yaxis_title='Número de Alunos', legend_title='Categoria')
+   # fig.update_layout(xaxis_title='Ano', yaxis_title='Número de Alunos', legend_title='Categoria')
 
 # Salvar o gráfico como imagem usando Kaleido (alternativa: Matplotlib já foi feito)
 # Como Kaleido não está disponível, salvamos novamente como imagem usando Matplotlib anteriormente
 # Aqui apenas exibiríamos interativamente se possível, mas como isso falha, salvar novamente não é necessário
 
-    fig.show()
+   # fig.show()
+    # Gerar gráfico com Matplotlib e salvar como imagem
+    px.figure(figsize=(12, 6))
+    px.plot(anos, total_matriculados, marker='o', label='Total Matriculados')
+    px.plot(anos, retencao, marker='s', label='Retidos')
+    px.plot(anos, evasao, marker='^', label='Evadidos')
 
+    px.xlabel('Ano')
+    px.ylabel('Número de Alunos')
+    px.title('Tendência: Total Matriculados, Retenção e Evasão (por Ano)')
+    px.grid(True, linestyle='--', alpha=0.7)
+    px.legend()
+    px.tight_layout()
+
+    # Salvar imagem
+    image_path = '/mnt/data/grafico_linhas_matriculados_retencao_evasao.png'
+    px.savefig(image_path)
+    px.show()
+
+    image_path
 
 
 
