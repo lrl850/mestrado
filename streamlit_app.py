@@ -112,24 +112,24 @@ elif pagina == "Curso Integrado em Eletroeletrônica":
 
    # fig.show()
     # Gerar gráfico com Matplotlib e salvar como imagem
-    px.figure(figsize=(12, 6))
-    px.plot(anos, total_matriculados, marker='o', label='Total Matriculados')
-    px.plot(anos, retencao, marker='s', label='Retidos')
-    px.plot(anos, evasao, marker='^', label='Evadidos')
+    plt.figure(figsize=(12, 6))
+    plt.plot(anos, total_matriculados, marker='o', label='Total Matriculados')
+    plt.plot(anos, retencao, marker='s', label='Retidos')
+    plt.plot(anos, evasao, marker='^', label='Evadidos')
 
-    px.xlabel('Ano')
-    px.ylabel('Número de Alunos')
-    px.title('Tendência: Total Matriculados, Retenção e Evasão (por Ano)')
-    px.grid(True, linestyle='--', alpha=0.7)
-    px.legend()
-    px.tight_layout()
+    plt.xlabel('Ano')
+    plt.ylabel('Número de Alunos')
+    plt.title('Tendência: Total Matriculados, Retenção e Evasão (por Ano)')
+    plt.grid(True, linestyle='--', alpha=0.7)
+    plt.legend()
+    plt.tight_layout()
 
     # Salvar imagem
     image_path = '/mnt/data/grafico_linhas_matriculados_retencao_evasao.png'
-    px.savefig(image_path)
-    px.show()
+    plt.savefig(image_path)
+    plt.show()
 
-    image_path
+    #image_path
 
 
 
