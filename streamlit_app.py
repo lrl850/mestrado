@@ -62,10 +62,21 @@ elif pagina == "Curso Integrado em Eletroeletrônica":
 # criando  grafico  do curso integrado em eletroeletrônica Resumido
 
     # Gerar gráfico de linhas interativo com Plotly Express (px)
-    fig = px.line(DataFrame_eltro_resumido, x='Ano', y='Número de Alunos', color='Categoria',
-              markers=True, title='Tendência: Total Matriculados, Retenção e Evasão (por Ano)')
+    px.figure(figsize=(12, 6))
+    px.plot(anos, total_matriculados, marker='o', label='Total Matriculados')
+    px.plot(anos, retencao, marker='s', label='Retidos')
+    px.plot(anos, evasao, marker='^', label='Evadidos')
 
-    fig.update_layout(xaxis_title='Ano', yaxis_title='Número de Alunos', legend_title='Categoria')
+    plt.xlabel('Ano')
+    plt.ylabel('Número de Alunos')
+    plt.title('Tendência: Total Matriculados, Retenção e Evasão (por Ano)')
+    plt.grid(True, linestyle='--', alpha=0.7)
+    plt.legend()
+    plt.tight_layout()  
+    plt.legend()
+    plt.show()
+
+   
 
 # Salvar o gráfico como imagem usando Kaleido (alternativa: Matplotlib já foi feito)
 # Como Kaleido não está disponível, salvamos novamente como imagem usando Matplotlib anteriormente
