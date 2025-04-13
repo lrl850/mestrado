@@ -46,6 +46,7 @@ elif pagina == "Curso Integrado em Eletroeletrônica":
     st.title("Página DataLake")
     st.write("Bem-vindo à página DataLake!")
     df = pd.read_excel("geral info.xlsx")
+    DataFrame_eltro_resumido = pd.read_excel("Total eletro Resumido .xlsx")
     st.dataframe(df)
 # criando  grafico interativo
     # Selecionar colunas para o gráfico
