@@ -62,7 +62,7 @@ elif pagina == "Curso Integrado em Eletroeletrônica":
         st.plotly_chart(fig)
 # criando  grafico  do curso integrado em eletroeletrônica Resumido
 
-    # Gerar gráfico de linhas interativo com Plotly Express (px)
+        # Criar gráfico de linhas para visualizar a tendência de cada grupo ao longo dos anos
     plt.figure(figsize=(12, 6))
     plt.plot(anos, total_matriculados, marker='o', label='Total Matriculados')
     plt.plot(anos, retencao, marker='s', label='Retidos')
@@ -73,10 +73,8 @@ elif pagina == "Curso Integrado em Eletroeletrônica":
     plt.title('Tendência: Total Matriculados, Retenção e Evasão (por Ano)')
     plt.grid(True, linestyle='--', alpha=0.7)
     plt.legend()
-    plt.tight_layout()  
-    plt.legend()
+    plt.tight_layout()
     plt.show()
-
    
 
 # Salvar o gráfico como imagem usando Kaleido (alternativa: Matplotlib já foi feito)
