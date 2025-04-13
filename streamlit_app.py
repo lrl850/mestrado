@@ -48,6 +48,7 @@ elif pagina == "Curso Integrado em Eletroeletrônica":
     df = pd.read_excel("geral info.xlsx")
     DataFrame_eltro_resumido = pd.read_excel("Total eletro Resumido .xlsx")
     st.dataframe(df)
+    st.dataframe(DataFrame_eltro_resumido)
 # criando  grafico interativo
     # Selecionar colunas para o gráfico
     colunas = df.columns
