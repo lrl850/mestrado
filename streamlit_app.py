@@ -61,7 +61,7 @@ elif pagina == "Curso Integrado em Eletroeletrônica":
 # criando  grafico  do curso integrado em eletroeletrônica Resumido
 
     # Gerar gráfico de linhas interativo com Plotly Express (px)
-    fig = px.line(df_long, x='Ano', y='Número de Alunos', color='Categoria',
+    fig = px.line(DataFrame_eltro_resumido, x='Ano', y='Número de Alunos', color='Categoria',
               markers=True, title='Tendência: Total Matriculados, Retenção e Evasão (por Ano)')
 
     fig.update_layout(xaxis_title='Ano', yaxis_title='Número de Alunos', legend_title='Categoria')
