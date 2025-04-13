@@ -64,13 +64,13 @@ elif pagina == "Curso Integrado em Eletroeletrônica":
     fig = px.line(df_long, x='Ano', y='Número de Alunos', color='Categoria',
               markers=True, title='Tendência: Total Matriculados, Retenção e Evasão (por Ano)')
 
-fig.update_layout(xaxis_title='Ano', yaxis_title='Número de Alunos', legend_title='Categoria')
+    fig.update_layout(xaxis_title='Ano', yaxis_title='Número de Alunos', legend_title='Categoria')
 
 # Salvar o gráfico como imagem usando Kaleido (alternativa: Matplotlib já foi feito)
 # Como Kaleido não está disponível, salvamos novamente como imagem usando Matplotlib anteriormente
 # Aqui apenas exibiríamos interativamente se possível, mas como isso falha, salvar novamente não é necessário
 
-fig.show()
+    fig.show()
 
 
 
