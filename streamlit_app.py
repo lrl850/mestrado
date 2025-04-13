@@ -10,7 +10,8 @@ st.set_page_config(page_title="Navegação com Menu", layout="wide")
 with st.sidebar:
     pagina = option_menu(
         "Menu",
-        ["Home", "Sobre", "Contato", "Projeto", "Curso Integrado em Eletroeletrônica","Curso Integrado em Informática"],
+        ["Home", "Sobre", "Contato", "Projeto", 
+         "Curso Integrado em Eletroeletrônica","Curso Integrado em Informática","Curso Integrado em Administração"],
        
         icons=["house", "info", "envelope", "file-earmark-code", "database","database"],
         menu_icon="cast",
@@ -61,5 +62,8 @@ elif pagina == "Curso Integrado em Eletroeletrônica":
 elif pagina == "Curso Integrado em Informática":
     st.title("Página Curso Integrado em Informática")
     st.write("Bem-vindo à página Curso Integrado Tecnico em Informatica!")
-   
+# Página : DataLake Curso Integrado em Administração
+elif pagina == "Curso Integrado em Administração":
+    st.title("Página Curso Integrado em Administração")
+    st.write("Bem-vindo à página Curso Integrado Tecnico em Administração!")   
 # teste commit
