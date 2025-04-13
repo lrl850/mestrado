@@ -58,6 +58,22 @@ elif pagina == "Curso Integrado em Eletroeletrônica":
     if x_col and y_col:
         fig = px.line(df, x=x_col, y=y_col, title=f"Gráfico de {x_col} vs {y_col}")
         st.plotly_chart(fig)
+# criando  grafico  do curso integrado em eletroeletrônica Resumido
+
+    plt.figure(figsize=(12, 6))
+    plt.plot(anos, total_matriculados, marker='o', label='Total Matriculados')
+    plt.plot(anos, retencao, marker='s', label='Retidos')
+    plt.plot(anos, evasao, marker='^', label='Evadidos')
+
+    plt.xlabel('Ano')
+    plt.ylabel('Número de Alunos')
+    plt.title('Tendência: Total Matriculados, Retenção e Evasão (por Ano)')
+    plt.grid(True, linestyle='--', alpha=0.7)
+    plt.legend()
+    plt.tight_layout()
+    plt.show()
+
+
 
 # Página: DataLake Curso Integrado em Informática
 elif pagina == "Curso Integrado em Informática":
