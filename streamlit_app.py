@@ -104,6 +104,8 @@ elif pagina == "Curso Integrado em Eletroeletrônica":
         plt.legend()
         plt.tight_layout()
         plt.show()
+        st.pyplot(plt)  # Exibir o gráfico no Streamlit
+        # Salvar o gráfico como imagem usando Matplotlib
     
 
 # Salvar o gráfico como imagem usando Kaleido (alternativa: Matplotlib já foi feito)
