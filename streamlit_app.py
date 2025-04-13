@@ -46,7 +46,7 @@ elif pagina == "Projeto":
 elif pagina == "Curso Integrado em Eletroeletrônica":
     st.title("Página DataLake")
     st.write("Bem-vindo à página DataLake!")
-    df = pd.read_excel("geral info.xlsx")
+    df = pd.read_excel("eletro  Geral - 2 a.xlsx")
     DataFrame_eltro_resumido = pd.read_excel("Total eletro Resumido .xlsx")
     st.dataframe(df)
     st.dataframe(DataFrame_eltro_resumido)
