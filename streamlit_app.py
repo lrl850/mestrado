@@ -61,21 +61,47 @@ elif pagina == "Curso Integrado em Eletroeletrônica":
         fig = px.line(df, x=x_col, y=y_col, title=f"Gráfico de {x_col} vs {y_col}")
         st.plotly_chart(fig)
 # criando  grafico  do curso integrado em eletroeletrônica Resumido
+        import matplotlib.pyplot as plt
+
+        # Dados para o gráfico de comparação Entrada vs Retenção vs Evasão
+        anos = df['Ano/Período']
+        entrada = df['Alunos matriculado 1 ano']
+        retencao = df['Alunos Total retido']
+        evasao = df['Alunos Evadido']
+
+        # Configurar gráfico de barras agrupadas
+        x = range(len(anos))
+        width = 0.25
+
+        plt.figure(figsize=(12, 6))
+        plt.bar([p - width for p in x], entrada, width=width, label='Matriculados 1º Ano')
+        plt.bar(x, retencao, width=width, label='Retidos')
+        plt.bar([p + width for p in x], evasao, width=width, label='Evadidos')
+
+        plt.xlabel('Ano')
+        plt.ylabel('Número de Alunos')
+        plt.title('Comparação: Entrada x Retenção x Evasão (por Ano)')
+        plt.xticks(ticks=x, labels=anos)
+        plt.legend()
+        plt.grid(axis='y', linestyle='--', alpha=0.7)
+        plt.tight_layout()
+        plt.show()
+
 
         # Criar gráfico de linhas para visualizar a tendência de cada grupo ao longo dos anos
-    plt.figure(figsize=(12, 6))
-    plt.plot(anos, total_matriculados, marker='o', label='Total Matriculados')
-    plt.plot(anos, retencao, marker='s', label='Retidos')
-    plt.plot(anos, evasao, marker='^', label='Evadidos')
+        plt.figure(figsize=(12, 6))
+        plt.plot(anos, total_matriculados, marker='o', label='Total Matriculados')
+        plt.plot(anos, retencao, marker='s', label='Retidos')
+        plt.plot(anos, evasao, marker='^', label='Evadidos')
 
-    plt.xlabel('Ano')
-    plt.ylabel('Número de Alunos')
-    plt.title('Tendência: Total Matriculados, Retenção e Evasão (por Ano)')
-    plt.grid(True, linestyle='--', alpha=0.7)
-    plt.legend()
-    plt.tight_layout()
-    plt.show()
-   
+        plt.xlabel('Ano')
+        plt.ylabel('Número de Alunos')
+        plt.title('Tendência: Total Matriculados, Retenção e Evasão (por Ano)')
+        plt.grid(True, linestyle='--', alpha=0.7)
+        plt.legend()
+        plt.tight_layout()
+        plt.show()
+    
 
 # Salvar o gráfico como imagem usando Kaleido (alternativa: Matplotlib já foi feito)
 # Como Kaleido não está disponível, salvamos novamente como imagem usando Matplotlib anteriormente
