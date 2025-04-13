@@ -39,16 +39,20 @@ elif pagina == "Projeto":
     st.write("Detalhes do projeto.")
     if st.button("Ir para DataLake"):
         st.session_state.pagina = "DataLake"
-        
 
-# Página: DataLake Curso Integrado em Eletroeletrônica"
+# Página: DataLake Curso Integrado em Eletroeletrônica
 elif pagina == "Curso Integrado em Eletroeletrônica":
     st.title("Página DataLake")
     st.write("Bem-vindo à página DataLake!")
+    
+    # Carregar os dados
     df = pd.read_excel("geral info.xlsx")
     DataFrame_eltro_resumido = pd.read_excel("Total eletro Resumido .xlsx")
+    
+    # Exibir o DataFrame
     st.dataframe(df)
-# criando  grafico interativo
+    
+    # Criando gráfico interativo
     # Selecionar colunas para o gráfico
     colunas = df.columns
     x_col = st.selectbox("Selecione a coluna para o eixo X", colunas)
@@ -58,22 +62,27 @@ elif pagina == "Curso Integrado em Eletroeletrônica":
     if x_col and y_col:
         fig = px.line(df, x=x_col, y=y_col, title=f"Gráfico de {x_col} vs {y_col}")
         st.plotly_chart(fig)
-# criando  grafico  do curso integrado em eletroeletrônica Resumido
-
+    
+    # Criando gráfico do curso integrado em eletroeletrônica resumido
     # Gerar gráfico de linhas interativo com Plotly Express (px)
-fig = px.line(df_long, x='Ano', y='Número de Alunos', color='Categoria',
-              markers=True, title='Tendência: Total Matriculados, Retenção e Evasão (por Ano)')
-
-fig.update_layout(xaxis_title='Ano', yaxis_title='Número de Alunos', legend_title='Categoria')
-
-# Salvar o gráfico como imagem usando Kaleido (alternativa: Matplotlib já foi feito)
-# Como Kaleido não está disponível, salvamos novamente como imagem usando Matplotlib anteriormente
-# Aqui apenas exibiríamos interativamente se possível, mas como isso falha, salvar novamente não é necessário
-
-fig.show()
-
-
-
+    fig_resumido = px.line(
+        DataFrame_eltro_resumido, 
+        x='Ano', 
+        y='Número de Alunos', 
+        color='Categoria', 
+        markers=True, 
+        title='Tendência: Total Matriculados, Retenção e Evasão (por Ano)'
+    )
+    
+    # Atualizar layout do gráfico
+    fig_resumido.update_layout(
+        xaxis_title='Ano', 
+        yaxis_title='Número de Alunos', 
+        legend_title='Categoria'
+    )
+    
+    # Exibir o gráfico
+    st.plotly_chart(fig_resumido)
 
 # Página: DataLake Curso Integrado em Informática
 elif pagina == "Curso Integrado em Informática":
