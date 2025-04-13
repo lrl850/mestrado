@@ -62,8 +62,18 @@ elif pagina == "Curso Integrado em Eletroeletrônica":
 elif pagina == "Curso Integrado em Informática":
     st.title("Página Curso Integrado em Informática")
     st.write("Bem-vindo à página Curso Integrado Tecnico em Informatica!")
+
+# criando  grafico interativo do curso integrado em informatica
+### poem seu codigo aqui
+  
+        
 # Página : DataLake Curso Integrado em Administração
 elif pagina == "Curso Integrado em Administração":
     st.title("Página Curso Integrado em Administração")
-    st.write("Bem-vindo à página Curso Integrado Tecnico em Administração!")   
+    st.write("Bem-vindo à página Curso Integrado Tecnico em Administração!")
+
+# criando  grafico interativo do curso integrado em administração
+### poem seu codigo aqui
+
+
 # teste commit
