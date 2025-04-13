@@ -12,7 +12,7 @@ with st.sidebar:
         "Menu",
         ["Home", "Sobre", "Contato", "Projeto", "Curso Integrado em Eletroeletrônica","Curso Integrado em Informática"],
        
-        icons=["house", "info", "envelope", "file-earmark-code", "database"],
+        icons=["house", "info", "envelope", "file-earmark-code", "database","Database"],
         menu_icon="cast",
         default_index=0
     )
