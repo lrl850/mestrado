@@ -10,7 +10,8 @@ st.set_page_config(page_title="Navegação com Menu", layout="wide")
 with st.sidebar:
     pagina = option_menu(
         "Menu",
-        ["Home", "Sobre", "Contato", "Projeto", "Curso Integrado em Eletroeletrônica"],
+        ["Home", "Sobre", "Contato", "Projeto", "Curso Integrado em Eletroeletrônica","Curso Integrado em Informática"],
+       
         icons=["house", "info", "envelope", "file-earmark-code", "database"],
         menu_icon="cast",
         default_index=0
@@ -39,7 +40,7 @@ elif pagina == "Projeto":
         st.session_state.pagina = "DataLake"
         
 
-# Página: DataLake
+# Página: DataLake Curso Integrado em Eletroeletrônica"
 elif pagina == "Curso Integrado em Eletroeletrônica":
     st.title("Página DataLake")
     st.write("Bem-vindo à página DataLake!")
@@ -55,5 +56,10 @@ elif pagina == "Curso Integrado em Eletroeletrônica":
     if x_col and y_col:
         fig = px.line(df, x=x_col, y=y_col, title=f"Gráfico de {x_col} vs {y_col}")
         st.plotly_chart(fig)
-    
+
+# Página: DataLake Curso Integrado em Informática
+elif pagina == "Curso Integrado em Informática":
+    st.title("Página Curso Integrado em Informática")
+    st.write("Bem-vindo à página Curso Integrado Tecnico em Informatica!")
+   
 # teste commit
