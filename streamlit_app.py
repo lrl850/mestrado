@@ -90,6 +90,9 @@ elif pagina == "Curso Integrado em Eletroeletrônica":
 
         # Criar gráfico de linhas para visualizar a tendência de cada grupo ao longo dos anos
         plt.figure(figsize=(12, 6))
+        # Definir total_matriculados como a soma das colunas relevantes
+        total_matriculados = DataFrame_eltro_resumido['Alunos matriculado 1 ano'] + DataFrame_eltro_resumido['Alunos Total retido']
+        
         plt.plot(anos, total_matriculados, marker='o', label='Total Matriculados')
         plt.plot(anos, retencao, marker='s', label='Retidos')
         plt.plot(anos, evasao, marker='^', label='Evadidos')
