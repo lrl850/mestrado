@@ -125,8 +125,8 @@ elif pagina == "Curso Integrado em Eletroeletrônica":
     plt.tight_layout()
 
     # Salvar imagem
-    image_path = '/mnt/data/grafico_linhas_matriculados_retencao_evasao.png'
-    plt.savefig(image_path)
+    #image_path = '/mnt/data/grafico_linhas_matriculados_retencao_evasao.png'
+    #plt.savefig(image_path)
     plt.show()
 
     #image_path
