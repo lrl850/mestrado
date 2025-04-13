@@ -60,18 +60,18 @@ elif pagina == "Curso Integrado em Eletroeletrônica":
         st.plotly_chart(fig)
 # criando  grafico  do curso integrado em eletroeletrônica Resumido
 
-    plt.figure(figsize=(12, 6))
-    plt.plot(anos, total_matriculados, marker='o', label='Total Matriculados')
-    plt.plot(anos, retencao, marker='s', label='Retidos')
-    plt.plot(anos, evasao, marker='^', label='Evadidos')
+    # Gerar gráfico de linhas interativo com Plotly Express (px)
+fig = px.line(df_long, x='Ano', y='Número de Alunos', color='Categoria',
+              markers=True, title='Tendência: Total Matriculados, Retenção e Evasão (por Ano)')
 
-    plt.xlabel('Ano')
-    plt.ylabel('Número de Alunos')
-    plt.title('Tendência: Total Matriculados, Retenção e Evasão (por Ano)')
-    plt.grid(True, linestyle='--', alpha=0.7)
-    plt.legend()
-    plt.tight_layout()
-    plt.show()
+fig.update_layout(xaxis_title='Ano', yaxis_title='Número de Alunos', legend_title='Categoria')
+
+# Salvar o gráfico como imagem usando Kaleido (alternativa: Matplotlib já foi feito)
+# Como Kaleido não está disponível, salvamos novamente como imagem usando Matplotlib anteriormente
+# Aqui apenas exibiríamos interativamente se possível, mas como isso falha, salvar novamente não é necessário
+
+fig.show()
+
 
 
 
