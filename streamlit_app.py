@@ -50,42 +50,52 @@ elif pagina == "Curso Integrado em Eletroeletrônica":
     DataFrame_eltro_resumido = pd.read_excel("Total eletro Resumido .xlsx")
     st.dataframe(df)
     st.dataframe(DataFrame_eltro_resumido)
-# criando  grafico interativo
-    # Selecionar colunas para o gráfico
-    colunas = df.columns
-    x_col = st.selectbox("Selecione a coluna para o eixo X", colunas)
-    y_col = st.selectbox("Selecione a coluna para o eixo Y", colunas)
-    
-    # Gerar o gráfico interativo
-    if x_col and y_col:
-        fig = px.line(df, x=x_col, y=y_col, title=f"Gráfico de {x_col} vs {y_col}")
-        st.plotly_chart(fig)
-# criando  grafico  do curso integrado em eletroeletrônica Resumido
-        import matplotlib.pyplot as plt
+# import streamlit as st
+import plotly.express as px
 
-        # Dados para o gráfico de comparação Entrada vs Retenção vs Evasão
-        anos = DataFrame_eltro_resumido['Ano/Período']
-        entrada = DataFrame_eltro_resumido['Alunos matriculado 1 ano']
-        retencao = DataFrame_eltro_resumido['Alunos Total retido']
-        evasao = DataFrame_eltro_resumido['Alunos Evadido']
+# Criando gráfico interativo
+colunas = df.columns
+x_col = st.selectbox("Selecione a coluna para o eixo X", colunas)
+y_col = st.selectbox("Selecione a coluna para o eixo Y", colunas)
 
-        # Configurar gráfico de barras agrupadas
-        x = range(len(anos))
-        width = 0.25
+# Gerar o gráfico interativo
+if x_col and y_col:
+    fig = px.line(df, x=x_col, y=y_col, title=f"Gráfico de {x_col} vs {y_col}")
+    st.plotly_chart(fig)
 
-        plt.figure(figsize=(12, 6))
-        plt.bar([p - width for p in x], entrada, width=width, label='Matriculados 1º Ano')
-        plt.bar(x, retencao, width=width, label='Retidos')
-        plt.bar([p + width for p in x], evasao, width=width, label='Evadidos')
+# Criando gráfico de tendência para o curso integrado em eletroeletrônica
+st.subheader("Análise do Curso Integrado em Eletroeletrônica")
 
-        plt.xlabel('Ano')
-        plt.ylabel('Número de Alunos')
-        plt.title('Comparação: Entrada x Retenção x Evasão (por Ano)')
-        plt.xticks(ticks=x, labels=anos)
-        plt.legend()
-        plt.grid(axis='y', linestyle='--', alpha=0.7)
-        plt.tight_layout()
-        plt.show()
+# Dados para o gráfico de linhas
+anos = DataFrame_eltro_resumido['Ano/Período']
+entrada = DataFrame_eltro_resumido['Alunos matriculado 1 ano']
+retencao = DataFrame_eltro_resumido['Alunos Total retido']
+evasao = DataFrame_eltro_resumido['Alunos Evadido']
+
+# Criar gráfico de linhas interativo
+fig_curso = px.line(
+    DataFrame_eltro_resumido,
+    x='Ano/Período',
+    y=['Alunos matriculado 1 ano', 'Alunos Total retido', 'Alunos Evadido'],
+    title='Tendência: Matrículas, Retenção e Evasão no Curso de Eletroeletrônica',
+    labels={'value': 'Número de Alunos', 'variable': 'Categoria'},
+    color_discrete_map={
+        'Alunos matriculado 1 ano': 'blue',
+        'Alunos Total retido': 'orange',
+        'Alunos Evadido': 'red'
+    }
+)
+
+# Melhorar formatação do gráfico
+fig_curso.update_layout(
+    xaxis_title='Ano/Período',
+    yaxis_title='Quantidade de Alunos',
+    hovermode='x unified',
+    legend_title='Categorias'
+)
+
+# Exibir gráfico
+st.plotly_chart(fig_curso)
 
 
         # Criar gráfico de linhas para visualizar a tendência de cada grupo ao longo dos anos
