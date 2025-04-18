@@ -72,7 +72,7 @@ elif pagina == "Curso Integrado em Eletroeletrônica":
     fig_tendencia = px.line(
         df_resumido,
         x='Ano/Período',
-        y=['Alunos matriculado 1 ano', 'Alunos Total retido', 'Alunos Evadido'],
+        y=['Total Matriculados', 'Alunos Total retido', 'Alunos Evadido'],
         title='Tendência no Curso de Eletroeletrônica',
         labels={'value': 'Número de Alunos', 'variable': 'Categoria'},
         color_discrete_map={
@@ -91,7 +91,7 @@ elif pagina == "Curso Integrado em Eletroeletrônica":
 
     # Gráfico com Matplotlib
     anos = df_resumido['Ano/Período']
-    entrada = df_resumido['Alunos matriculado 1 ano']
+    entrada = df_resumido['Total Matriculados']
     retencao = df_resumido['Alunos Total retido']
     evasao = df_resumido['Alunos Evadido']
     total_matriculados = entrada + retencao
