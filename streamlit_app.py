@@ -48,7 +48,7 @@ elif pagina == "Curso Integrado em Eletroeletrônica":
     st.write("Bem-vindo à análise de tendências do curso!")
 
     # Corrigido: nomes dos arquivos sem espaços desnecessários
-    df = pd.read_excel("eletro geral 2a.xlsx")
+    df = pd.read_excel("eletro  Geral - 2 a.xlsx")
     df_resumido = pd.read_excel("total_eletro_resumido.xlsx")
 
     # Exibir dados
