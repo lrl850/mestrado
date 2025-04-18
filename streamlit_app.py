@@ -83,7 +83,7 @@ elif pagina == "Curso Integrado em Eletroeletrônica":
     # Exibir os dados carregados
     st.dataframe(DataFrame_eltro_resumido)
 
-    # Criar gráfico de tendência com Plotly Express
+    # Criar gráfico de tendência com Plotly Express    st.subheader("Análise do Curso Integrado import streamlit as st em Eletroeletrônica")    st.subheader("Análise do Curso Integrado import streamlit as st em Eletroeletrônica")
     fig_tendencia = px.line(
         DataFrame_eltro_resumido,
         x='Ano/Período',
@@ -158,32 +158,6 @@ st.plotly_chart(fig_curso)
         st.pyplot(plt)  # Exibir o gráfico no Streamlit
         # Salvar o gráfico como imagem usando Matplotlib
     
-
-# Salvar o gráfico como imagem usando Kaleido (alternativa: Matplotlib já foi feito)
-# Como Kaleido não está disponível, salvamos novamente como imagem usando Matplotlib anteriormente
-#Aqui apenas exibiríamos interativamente se possível, mas como isso falha, salvar novamente não é necessário
-
-   # fig.show()
-    # Gerar gráfico com Matplotlib e salvar como imagem
-    plt.figure(figsize=(12, 6))
-    plt.plot(anos, total_matriculados, marker='o', label='Total Matriculados')
-    plt.plot(anos, retencao, marker='s', label='Retidos')
-    plt.plot(anos, evasao, marker='^', label='Evadidos')
-
-    plt.xlabel('Ano')
-    plt.ylabel('Número de Alunos')
-    plt.title('Tendência: Total Matriculados, Retenção e Evasão (por Ano)')
-    plt.grid(True, linestyle='--', alpha=0.7)
-    plt.legend()
-    plt.tight_layout()
-
-    # Salvar imagem
-    #image_path = '/mnt/data/grafico_linhas_matriculados_retencao_evasao.png'
-    #plt.savefig(image_path)
-    plt.show()
-
-    #image_path
-
 
 
 # Página: DataLake Curso Integrado em Informática
