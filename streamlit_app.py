@@ -49,7 +49,7 @@ elif pagina == "Curso Integrado em Eletroeletrônica":
 
     # Corrigido: nomes dos arquivos sem espaços desnecessários
     df = pd.read_excel("eletro  Geral - 2 a.xlsx")
-    df_resumido = pd.read_excel("total_eletro_resumido.xlsx")
+    df_resumido = pd.read_excel("Total eletro Resumido .xlsx")
 
     # Exibir dados
     st.subheader("Dados completos")
