@@ -64,7 +64,10 @@ if x_col and y_col:
     st.plotly_chart(fig)
 
 # Criando gráfico de tendência para o curso integrado em eletroeletrônica
-st.subheader("Análise do Curso Integrado import streamlit as st em Eletroeletrônica")
+st.subheader("Análise do Curso Integrado import streamlit as st# Criando gráfico de tendência para o curso integrado em eletroeletrônica
+st.subheader("Análise do Curso Integrado em Eletroeletrônica")
+import pandas as pd
+import plotly.express as px em Eletroeletrônica")
 import pandas as pd
 import plotly.express as px
 
