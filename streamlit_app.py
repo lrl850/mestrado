@@ -64,8 +64,46 @@ if x_col and y_col:
     st.plotly_chart(fig)
 
 # Criando gráfico de tendência para o curso integrado em eletroeletrônica
-st.subheader("Análise do Curso Integrado em Eletroeletrônica")
+st.subheader("Análise do Curso Integrado import streamlit as st
+import pandas as pd
+import plotly.express as px
 
+# Página: DataLake Curso Integrado em Eletroeletrônica
+elif pagina == "Curso Integrado em Eletroeletrônica":
+    st.title("Análise do Curso Integrado em Eletroeletrônica")
+    st.write("Bem-vindo à análise de tendências do curso!")
+
+    # Carregar os dados do Excel
+    df = pd.read_excel("eletro  Geral - 2 a.xlsx")
+    DataFrame_eltro_resumido = pd.read_excel("Total eletro Resumido .xlsx")
+
+    # Exibir os dados carregados
+    st.dataframe(DataFrame_eltro_resumido)
+
+    # Criar gráfico de tendência com Plotly Express
+    fig_tendencia = px.line(
+        DataFrame_eltro_resumido,
+        x='Ano/Período',
+        y=['Alunos matriculado 1 ano', 'Alunos Total retido', 'Alunos Evadido'],
+        title='Tendência: Matrículas, Retenção e Evasão no Curso de Eletroeletrônica',
+        labels={'value': 'Número de Alunos', 'variable': 'Categoria'},
+        color_discrete_map={
+            'Alunos matriculado 1 ano': 'blue',
+            'Alunos Total retido': 'orange',
+            'Alunos Evadido': 'red'
+        }
+    )
+
+    # Melhorar a formatação do gráfico
+    fig_tendencia.update_layout(
+        xaxis_title='Ano/Período',
+        yaxis_title='Quantidade de Alunos',
+        hovermode='x unified',
+        legend_title='Categorias'
+    )
+
+    # Exibir o gráfico no Streamlit
+    st.plotly_chart(fig_tendencia)
 # Dados para o gráfico de linhas
 anos = DataFrame_eltro_resumido['Ano/Período']
 entrada = DataFrame_eltro_resumido['Alunos matriculado 1 ano']
